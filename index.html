@@ -1,0 +1,104 @@
+<!-- "Cabeçalho do documento html" -->
+<!DOCTYPE html>
+<html lang="pt-br" class="light" >
+<head>
+
+    <!-- importa os tipos de fonte de texto usados no projeto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- Define o tipo de caracteres usados -->
+    <meta charset="UTF-8">
+
+    <!-- Configura a "viewport", o comportamento da tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nomeia a "ABA" da página -->
+    <title>Devlinks</title>
+
+<!-- Importa o arquivo de stilo do CSS para o html -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Divisão principal "container" contém a maioria os elemento do projeto -->
+    <div id="container">
+
+<!-- Informações do perfil -->
+        <div id="profile">
+
+            <img src="./assets/avatar-light.png" alt="Foto de Kenney">
+            <p>@kenney_pacheco</p>
+
+        </div>
+
+<!-- Botão que altera o modo "dark/light" -->
+        <div class="switch" onclick="toggleMode()">
+
+            <button></button>
+            <span></span>
+
+        </div>
+
+<!-- Setor de Links da página -->
+        <div class="links">
+
+            <!-- "ul" cria uma lista não ordeada -->
+            <ul>
+
+            <!-- Adiciona um item a lista -->
+                <li>
+                    <a href="https://github.com/KenneyPacheco?tab=repositories" target="_blank">Ver meu portifólio</a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/kenney-pacheco-004433248/" target="_blank">Conheça meu linkedin</a>
+                </li>
+
+                <li>
+                    <a href="#">Baixe meu e-book</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Direcionar para redes socias -->
+    <div class="socialmedia">
+
+        <a href="https://www.instagram.com/kenney_pacheco/"target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            
+
+        <a href="https://github.com/KenneyPacheco"target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+            
+
+        <a href="https://www.youtube.com/channel/UCu8CgBn5i9C1FkpQ9CpERGQ"target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+            
+
+        <a href="https://www.twitch.tv/kenneypacheco"target="_blank"><ion-icon name="logo-twitch"></ion-icon></a>
+            
+
+        <a href="https://api.whatsapp.com/send?phone=5516988615399&text="target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+
+        Projeto feito com muito carinho por <a href="http://www.rocketseat.com.br" target="_blank">Rocketseat</a> <ion-icon name="heart"></ion-icon>
+    </footer>
+
+
+    <!-- Adiciona os icones usados no projeto -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Adiciona o arquivo do javascrip ao html -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
