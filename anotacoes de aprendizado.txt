@@ -1,3 +1,0 @@
-No CSS não precisa determinar a altura "heigth" pois os itens em block são organizados um acima do outro respeitando os preechimento entre eles.
-Elementos inline não aceitam o comando "margen auto" podemos tranformar o tipo de elemento para "block" ou usar o elemento pai da caixa que deseja centralizar.
-Os navegares ja vem com um "font-size" de 16px, sendo assim só é necessário informar em casos maiores ou menos de 16px.
