@@ -1,5 +1,6 @@
 /* Reseta as configurações padrão do navegador */
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,9 +12,9 @@
     --text-color: white;
     --bg-url: url(./assets/bg-mobile.jpg);
     --stroke-color: rgba(255, 255, 255, 0.5);
-    --surface-color: rgba(255, 255, 255, 0.2);
-    --surface-color-hover: rgba(255, 255, 255, 0.5);
-    --highlight: rgba(255, 255, 255, 0.2);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --highlight: rgba(255, 255, 255, 0.1);
     --bg-switch-url: url(./assets/MoonStars.svg);
 }
 
@@ -23,9 +24,9 @@
     --text-color: black;
     --bg-url: url(./assets/bg-mobile-light.jpg);
     --stroke-color:rgba(0, 0, 0, 0.5);
-    --surface-color: rgba(0, 0, 0, 0.2);
-    --surface-color-hover: rgba(0, 0, 0, 0.5);
-    --highlight: rgba(0, 0, 0, 0.2);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --highlight: rgba(0, 0, 0, 0.1);
     --bg-switch-url: url(./assets/Sun.svg);
 }
 
@@ -35,12 +36,10 @@ body {
     background: var(--bg-url) no-repeat top center/cover;
     
    /* outra forma de fazer seria assim
-
     background-image: url(./assets/bg-mobile.jpg);
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: cover;*/
-    
+    background-size: cover;*/  
 }
 
 /* Adiciona o tipo de fonte e cor do texto, o "*" na frente do "body" indica que essas configurações serão adicionadas para todos os elemento do body" */
@@ -58,6 +57,27 @@ estas linhas adicionam largura, margem e preenchimento repectivamente */
   margin: 56px auto 0;
   padding: 0 24px;
   
+}
+
+/* Posiciona a foto do perfil e o texto abaixo */
+#profile {
+
+    text-align: center;
+    padding: 24px;
+}
+
+/* Define o tamanho da imagem */
+#profile img {
+
+    width: 112px;
+}
+
+/* Define o tamanho do texto abaixo da imagem */
+#profile p {
+
+    font-weight: 500;
+    line-height: 24px;
+    padding-top: 8px;
 }
 
 /* Nessas linhas estão as configurações da "div" onde configura o botão "dark, light" */
@@ -83,15 +103,18 @@ largura, altura, borda, arredondamento de borda, plano de fundo, posicionamento 
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
-
+    animation: slide-back 0.2s;
 }
 
 
 /* define o início do botão no lado esquerdo */
 .light .switch button {
 
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
+}
+
+.switch button:hover {
+    outline: 8px solid var(--highlight);
 }
 
 /* Configuração da "caixa" onde o botão ficará alternado de um lado a outro após o click  */
@@ -108,28 +131,6 @@ largura, altura, borda, arredondamento de borda, plano de fundo, posicionamento 
     -webkit-backdrop-filter: blur(4px);
 }
 
-
-/* Posiciona a foto do perfil e o texto abaixo */
-#profile {
-
-    text-align: center;
-    padding: 24px;
-}
-
-/* Define o tamanho da imagem */
-#profile img {
-
-    width: 112px;
-    margin: auto;
-}
-
-/* Define o tamanho do texto abaixo da imagem */
-#profile p {
-
-    font-weight: 500;
-    line-height: 24px;
-    padding-top: 8px;
-}
 
 /* Configura a exibição e espaçamento dos itens da lista "links" */
 ul {
@@ -169,26 +170,26 @@ ul li a:hover {
 .socialmedia {
 
     display: flex;
+    justify-content: center;
     font-size: 24px;
     padding: 24px 0px;
-    justify-content: center;
-    transition: backgroud 0.2s;
 }
 
 /* Posiciona os icones das redes sociais */
 .socialmedia a {
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 16px;
+    transition: backgroud 0.2s;
+    border-radius: 50%;
 }
 
-/* Esta linha gera uma "animação" quando o cursor do mouse repousa sobre o icone */ 
+/* Esta linha gera um contorno quando o cursor do mouse repousa sobre o icone */ 
 .socialmedia a:hover {
 
     background: var(--highlight);
-    border-radius: 50%;
 }
 
 /* Posiciona e define o tamanho do texto do rodapé */
@@ -196,5 +197,35 @@ footer {
 
     text-align: center;
     padding: 24px 0;
-    font-size: 16px;
+    font-size: 14px;
 }
+
+  /* Media queries para configuração plano de fundo em telas maiores*/
+  @media (min-width: 700px) {
+    :root {
+      --bg-url: url(./assets/bg-desktop.jpg);
+    }
+  
+    .light {
+      --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+  }
+  
+  /* Animation de movimento do botão */
+  @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50%;
+    }
+  }
+  
+  @keyframes slide-back {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+  }
