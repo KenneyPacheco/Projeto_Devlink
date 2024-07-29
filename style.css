@@ -34,6 +34,7 @@ body {
 
     /*Cria uma variável para o plano de fundo e configura para não repetir, alinha ao topo e no centro, cobre toda a tela*/
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
     
    /* outra forma de fazer seria assim
     background-image: url(./assets/bg-mobile.jpg);
@@ -53,10 +54,10 @@ body * {
 estas linhas adicionam largura, margem e preenchimento repectivamente */
 #container {
 
-  width: 360px;
-  margin: 56px auto 0;
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
   padding: 0 24px;
-  
 }
 
 /* Posiciona a foto do perfil e o texto abaixo */
@@ -85,7 +86,7 @@ estas linhas adicionam largura, margem e preenchimento repectivamente */
 
     position: relative;
     width: 64px;
-    margin: 16px auto;
+    margin: 4px auto;
     
 }
 
@@ -110,6 +111,7 @@ largura, altura, borda, arredondamento de borda, plano de fundo, posicionamento 
 /* define o início do botão no lado esquerdo */
 .light .switch button {
 
+  /* "forwards" faz o botão ficar no ponto determinado sem ele voltaria ao inicio */
     animation: slide-in 0.2s forwards;
 }
 
@@ -139,6 +141,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 24px 0;
 }
 
 
